@@ -46,3 +46,5 @@ gem 'devise'
 
 #deploy with Capistrano
 gem 'capistrano'
+
+gem 'valid_email'

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120602193931) do
+ActiveRecord::Schema.define(:version => 20120602204011) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -52,6 +52,8 @@ ActiveRecord::Schema.define(:version => 20120602193931) do
     t.text     "clue"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id"
+    t.string   "email"
   end
 
   create_table "images", :force => true do |t|

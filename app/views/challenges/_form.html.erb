@@ -12,17 +12,25 @@
   <% end %>
 
   <div class="field">
+    <%= f.label :email, "Friends email" %><br />
+    <%= f.text_field :email %>
+  </div>
+
+  <div class="field">
     <%= f.label :image_1_id, "Image one" %><br />
     <%= f.collection_select :image_1_id, Image.all, :id, :name %>
   </div>
+
   <div class="field">
     <%= f.label :image_1_id, "Image two" %><br />
     <%= f.collection_select :image_2_id, Image.all, :id, :name %>
   </div>
+
   <div class="field">
     <%= f.label :clue %><br />
     <%= f.text_area :clue %>
   </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>
