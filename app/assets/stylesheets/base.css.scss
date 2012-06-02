@@ -70,7 +70,6 @@ div {
   }
 }
 
-
 /* LAYOUT */
 
 .wrapper {
@@ -100,10 +99,25 @@ div {
 /* END LAYOUT */
 
 .response-page {
-  .image-one,
-  .image-two,
   .clue {
-    margin-top: 30px;
+    clear: both;
+    padding-top: 30px;
     margin-bottom: 30px;
+  }
+
+  .title {
+    text-align: center;
+    font-size: 22px;
+    padding-bottom: 10px;
+    margin-top: 20px;
+  }
+
+  .image-one {
+    float: left;
+    margin-right: 20px;
+  }
+
+  .image-two {
+    float: left;
   }
 }

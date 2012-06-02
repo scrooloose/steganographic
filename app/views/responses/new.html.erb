@@ -1,11 +1,11 @@
 <div class="response-page">
   <div class="image-one">
-    <h2>Image One</h2>
+    <div class="title">Image One</div>
     <%= image_tag @challenge.image_1.image(:default) %>
   </div>
 
   <div class="image-two">
-    <h2>Image Two</h2>
+    <div class="title">Image Two</div>
     <%= image_tag  @challenge.image_2.image(:default) %>
   </div>
 
@@ -16,6 +16,7 @@
   <% end %>
 
   <%= form_tag challenge_responses_path(@challenge) do %>
+    <label for="answer">Your answer:</label>
     <%= text_field_tag :answer %>
   <% end  %>
 </div>
