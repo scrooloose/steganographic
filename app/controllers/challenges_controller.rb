@@ -17,31 +17,10 @@ class ChallengesController < ApplicationController
     @challenge = current_user.challenges.new(params[:challenge])
     if @challenge.save
       flash[:notice] = "Successfully created challenge."
-      redirect_to @challenge
+      @challenge.send_challenge_email
+      redirect_to root_url
     else
       render :action => 'new'
     end
   end
-
-  def edit
-    @challenge = current_user.challenges.find(params[:id])
-  end
-
-  def update
-    @challenge = current_user.challenges.find(params[:id])
-    if @challenge.update_attributes(params[:challenge])
-      flash[:notice] = "Successfully updated challenge."
-      redirect_to @challenge
-    else
-      render :action => 'edit'
-    end
-  end
-
-  def destroy
-    @challenge = current_user.challenges.find(params[:id])
-    @challenge.destroy
-    flash[:notice] = "Successfully destroyed challenge."
-    redirect_to challenges_url
-  end
-
 end
