@@ -70,6 +70,9 @@ div {
   }
 }
 
+
+/* LAYOUT */
+
 .wrapper {
   width: 1000px;
   margin: auto;
@@ -91,5 +94,16 @@ div {
       float: right;
       margin-right: 40px;
     }
+  }
+}
+
+/* END LAYOUT */
+
+.response-page {
+  .image-one,
+  .image-two,
+  .clue {
+    margin-top: 30px;
+    margin-bottom: 30px;
   }
 }

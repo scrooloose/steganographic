@@ -1,8 +1,21 @@
-<%= image_tag @challenge.image_1.image(:default) %>
-<%= image_tag  @challenge.image_2.image(:default) %>
-<%= @challenge.clue %>
+<div class="response-page">
+  <div class="image-one">
+    <h2>Image One</h2>
+    <%= image_tag @challenge.image_1.image(:default) %>
+  </div>
 
-<%= form_tag challenge_responses_path(@challenge) do %>
-  <%= text_field_tag :answer %>
-<% end  %>
+  <div class="image-two">
+    <h2>Image Two</h2>
+    <%= image_tag  @challenge.image_2.image(:default) %>
+  </div>
 
+  <% unless @challenge.clue.blank? %>
+    <div class="clue">
+      Clue: <%= @challenge.clue %>
+    </div>
+  <% end %>
+
+  <%= form_tag challenge_responses_path(@challenge) do %>
+    <%= text_field_tag :answer %>
+  <% end  %>
+</div>
