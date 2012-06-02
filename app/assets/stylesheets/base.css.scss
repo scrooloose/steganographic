@@ -1,0 +1,23 @@
+.wrapper {
+  width: 1000px;
+  margin: auto;
+
+
+  .header {
+    height: 100px;
+    background: #eee;
+    text-align: center;
+
+    .title {
+      height: 80px;
+      line-height: 80px;
+      font-size: 30px;
+      font-weight: bold;
+    }
+
+    .nav {
+      float: right;
+      margin-right: 40px;
+    }
+  }
+}
