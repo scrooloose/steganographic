@@ -12,7 +12,8 @@
 
     <div class="header">
       <div class="title">
-        THE IMPOSSIBLE MISSION FORCE PWNS YOUR SOUL
+        <%= link_to "THE IMPOSSIBLE MISSION FORCE PWNS YOUR SOUL", root_url %>
+
       </div>
       <div class="nav">
         <% if user_signed_in? %>
@@ -23,6 +24,11 @@
         <% end %>
       </div>
     </div>
+
+    <% if flash[:notice] %>
+      <div class="flash"><%= flash[:notice] %></div>
+    <% end %>
+
 
     <%= yield %>
 

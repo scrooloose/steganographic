@@ -1,0 +1,8 @@
+<%= image_tag @challenge.image_1.image(:default) %>
+<%= image_tag  @challenge.image_2.image(:default) %>
+<%= @challenge.clue %>
+
+<%= form_tag challenge_responses_path(@challenge) do %>
+  <%= text_field_tag :answer %>
+<% end  %>
+

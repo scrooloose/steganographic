@@ -7,8 +7,13 @@ class Challenge < ActiveRecord::Base
   validates :image_2_id, :presence => true
   validates :email, :presence => true, :email => true
   validates :user_id, :presence => true
+  validates :answer, :presence => true
 
   def send_challenge_email
     ChallengeMailer.challenge(self).deliver
+  end
+
+  def correct_answer?(guess)
+    guess == self.answer
   end
 end
