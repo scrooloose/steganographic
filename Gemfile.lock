@@ -180,6 +180,7 @@ DEPENDENCIES
   activeadmin (~> 0.4.4)
   capistrano
   coffee-rails (~> 3.1.1)
+  devise
   jquery-rails
   meta_search (>= 1.1.0.pre)
   mysql2
