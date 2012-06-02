@@ -12,12 +12,12 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :image_1_id %><br />
-    <%= f.number_field :image_1_id %>
+    <%= f.label :image_1_id, "Image one" %><br />
+    <%= f.collection_select :image_1_id, Image.all, :id, :name %>
   </div>
   <div class="field">
-    <%= f.label :image_2_id %><br />
-    <%= f.number_field :image_2_id %>
+    <%= f.label :image_1_id, "Image two" %><br />
+    <%= f.collection_select :image_2_id, Image.all, :id, :name %>
   </div>
   <div class="field">
     <%= f.label :clue %><br />
