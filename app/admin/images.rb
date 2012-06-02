@@ -7,4 +7,16 @@ ActiveAdmin.register Image do
 
     f.buttons
   end
+
+  show do
+    div :class => "panel" do
+      h3 "Image"
+
+      div do
+        image_tag(image.image.url(:default))
+      end
+    end
+
+    default_main_content
+  end
 end
