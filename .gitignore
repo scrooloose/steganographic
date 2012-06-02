@@ -17,3 +17,4 @@
 *.swp
 *~
 config/database.yml
+public/system
