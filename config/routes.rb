@@ -1,4 +1,6 @@
 Website::Application.routes.draw do
+  resources :images
+
   resources :challenges
 
   ActiveAdmin.routes(self)

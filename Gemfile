@@ -23,6 +23,7 @@ gem 'therubyracer'
 gem 'sass-rails',   '~> 3.1.5'
 
 gem 'mysql2'
+gem 'paperclip'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
