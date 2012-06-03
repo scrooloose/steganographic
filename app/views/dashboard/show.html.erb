@@ -13,7 +13,7 @@
   </div>
 
 <% else %>
-  <%= link_to "Add challenge", new_challenge_path %>
+  <%= link_to image_tag("buttons/btn_add.png"), new_challenge_path %>
 <% end %>
 
 
@@ -29,3 +29,8 @@
 <div class="clear">&nbsp;</div>
 
 <h3>Newly added</h3>
+
+<br />
+<br />
+
+<%= link_to image_tag("buttons/btn_rest.png", :height => 100), challenges_path %>
