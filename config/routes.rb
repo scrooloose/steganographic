@@ -8,6 +8,8 @@ Website::Application.routes.draw do
     resources :responses, :only => [:new, :create]
   end
 
+  resources :vowel_purchases, :only => [:new, :create]
+
   ActiveAdmin.routes(self)
   devise_for :admin_users, ActiveAdmin::Devise.config
 
