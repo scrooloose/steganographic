@@ -18,4 +18,8 @@ class User < ActiveRecord::Base
   def to_s
     "#{id} - #{email}"
   end
+
+  def leaderboard_email
+    email.sub(/@.*/, '@...')
+  end
 end
