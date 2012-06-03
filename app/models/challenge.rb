@@ -10,8 +10,8 @@ class Challenge < ActiveRecord::Base
   validates :user_id, :presence => true
   validates :answer, :presence => true
 
-  def self.newly_added(number)
-    order('created_at DESC').limit(number)
+  def self.newly_added(number, current_user)
+    order('created_at DESC').where('user_id != ?', current_user.id).limit(number)
   end
 
   def send_challenge_email

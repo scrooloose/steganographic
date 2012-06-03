@@ -3,7 +3,7 @@
 </div>
 
 <% if current_user.challenges.last %>
-  <div style="border: 1px dotted #ddd; width: 425px; text-align: center; float: left">
+  <div style="border: 2px solid orange; width: 425px; text-align: center; float: left">
     <%= render :partial => "challenges/large_display", :locals => { :challenge => current_user.challenges.last } %>
   </div>
 
@@ -21,7 +21,7 @@
 <div class="clear">&nbsp;</div>
 
 <div class="teaser-challenges">
-  <% Challenge.newly_added(3).each do |challenge| %>
+  <% Challenge.newly_added(3, current_user).each do |challenge| %>
     <%= render :partial => "challenges/display", :locals => { :challenge => challenge, :thumb => :home_page, :create_links => true } %>
   <% end %>
 </div>

@@ -2,7 +2,7 @@ class ChallengesController < ApplicationController
   before_filter :authenticate_user!, :except => :index
 
   def index
-    @challenges = Challenge.all
+    @challenges = Challenge.where('user_id != ?', current_user.id)
   end
 
   def new
