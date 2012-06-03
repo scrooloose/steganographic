@@ -1,8 +1,20 @@
-<h1>VowelPurchases#new</h1>
-<p>Find me in app/views/vowel_purchase/new.html.erb</p>
+<h2>Need a clue?!?!</h2>
 
-put some awesome messaging here - i.e. click here to help feed a child etc
+<h3>
+  Unlock all the 'AEIOU' and see if you can 'PWN' the challenge. 
+</h3>
+
+<h3>
+  And cos we're so fabulous, with each purchase we'll be donating $1.50 to UNICEF so they can feed a malnourished child much needed breakfast, lunch & dinner.
+</h3>
+
+<h3>
+  Want more info on the UNICEF survival packs? <%= link_to "click here!", "https://secure3.convio.net/uncfca/site/SPageServer?pagename=FAQS_EN&JServSessionIdr004=b8uqhwvur1.app339a" %>
+</h3>
+
 
 <%= form_tag vowel_purchases_path(:resp_id => @resp.id) do %>
-  <%= submit_tag "Buy vowels!" %> (stick the post-it image here)
+  <div style="text-align: center">
+    <%= image_submit_tag "buttons/btn_buy.png" %>
+  </div>
 <% end %>

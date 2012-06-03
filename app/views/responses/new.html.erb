@@ -18,5 +18,9 @@
     <% end  %>
   </div>
 
-  <%= link_to "Stumped?", new_vowel_purchase_path(:resp_id => @resp.id)  %>
+  <% unless @resp.show_vowels? %>
+    <div style="text-align: center; margin-top: 20px">
+      <%= link_to image_tag("buttons/btn_stumped.png"), new_vowel_purchase_path(:resp_id => @resp.id)  %>
+    </div>
+  <% end %>
 </div>
