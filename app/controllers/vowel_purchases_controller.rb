@@ -10,8 +10,6 @@ class VowelPurchasesController < ApplicationController
       @resp.make_giverboard_purchase(current_user)
       @resp.save!
     end
-
-    redirect_to new_challenge_response_path(@resp.challenge_id)
   end
 
   protected
