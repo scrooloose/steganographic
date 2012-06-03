@@ -8,18 +8,20 @@ class ResponsesController < ApplicationController
   end
 
   def create
-    response = Response.find_or_create_by_user_id_and_challenge_id(current_user.id, @challenge.id)
-    response.attempts = response.attempts + 1
+    resp = Response.find_or_create_by_user_id_and_challenge_id(current_user.id, @challenge.id)
+    resp.attempts += 1
 
     if @challenge.correct_answer?(params[:answer])
-      response.correct = true
+      resp.correct = true
+      current_user.points += resp.points_for_this_attempt
+      current_user.save!
       redirect_to dashboard_path, :notice => "Good job! You truly PWN!"
     else
       flash.now[:notice] = "Guess again!"
       render :new
     end
 
-    response.save!
+    resp.save!
   end
 
   protected

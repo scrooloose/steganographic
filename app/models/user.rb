@@ -11,6 +11,10 @@ class User < ActiveRecord::Base
   has_many :challenges
   has_many :responses
 
+  after_initialize do |user|
+    user.points ||= 0
+  end
+
   def to_s
     "#{id} - #{email}"
   end

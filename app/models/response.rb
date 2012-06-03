@@ -10,4 +10,16 @@ class Response < ActiveRecord::Base
       response.attempts = 0
     end
   end
+
+  def points_for_this_attempt
+    if attempts <= 1
+      10
+    elsif attempts == 2
+      5
+    elsif attempts == 3
+      2
+    else
+      1
+    end
+  end
 end
