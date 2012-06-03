@@ -8,7 +8,7 @@
 
   <div class="clear">&nbsp;</div>
 
-  <div class="hint-string"><%= @challenge.hint_string %></div>
+  <div class="hint-string"><%= @challenge.hint_string(@resp.show_vowels) %></div>
 
   <div class="clear">&nbsp;</div>
 
@@ -17,4 +17,6 @@
       <%= text_field_tag :answer, nil, :placeholder => "Guess the phrase!", :autocomplete => "off" %>
     <% end  %>
   </div>
+
+  <%= link_to "Stumped?", new_vowel_purchase_path(:resp_id => @resp.id)  %>
 </div>

@@ -1,2 +1,8 @@
 <h1>VowelPurchases#new</h1>
 <p>Find me in app/views/vowel_purchase/new.html.erb</p>
+
+put some awesome messaging here - i.e. click here to help feed a child etc
+
+<%= form_tag vowel_purchases_path(:resp_id => @resp.id) do %>
+  <%= submit_tag "Buy vowels!" %> (stick the post-it image here)
+<% end %>

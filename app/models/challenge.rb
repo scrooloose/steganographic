@@ -22,7 +22,13 @@ class Challenge < ActiveRecord::Base
     guess == self.answer
   end
 
-  def hint_string
-    answer.gsub(/\s+/, '|').gsub(/\w/, '_')
+  def hint_string(show_vowels)
+    rv = answer.gsub(/\s+/, '|')
+
+    if show_vowels
+      rv.gsub!(/[bcdfghjklmnpqrstvwxyz_]/i, '_')
+    else
+      rv.gsub!(/\w/, '_')
+    end
   end
 end
