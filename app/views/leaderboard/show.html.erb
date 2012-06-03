@@ -1,0 +1,21 @@
+<h2>OMG TEH Leaderboard!</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Email</th>
+      <th>Points!</th>
+    </tr>
+  </thead>
+
+  <tbody>
+
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.email %></td>
+        <td><%= user.points %></td>
+      </tr>
+    <% end %>
+
+  </tbody>
+</table>
