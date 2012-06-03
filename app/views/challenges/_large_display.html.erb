@@ -1,10 +1,10 @@
 <div class="challenge-large-display">
   <div class="image-one">
-    <%= image_tag challenge.image_1.image(:default) %>
+    <%= link_to image_tag(challenge.image_1.image(:default)), new_challenge_response_path(challenge) %>
   </div>
 
   <div class="image-two">
-    <%= image_tag  challenge.image_2.image(:default) %>
+    <%= link_to image_tag(challenge.image_2.image(:default)), new_challenge_response_path(challenge) %>
   </div>
 
   <% unless challenge.clue.blank? %>

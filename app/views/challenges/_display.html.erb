@@ -1,9 +1,9 @@
 <div class="challenge">
   <div class="image-one">
-    <%= image_tag challenge.image_1.image(thumb) %>
+    <%= link_to image_tag(challenge.image_1.image(thumb)), new_challenge_response_path(challenge) %>
   </div>
 
   <div class="image-two">
-    <%= image_tag challenge.image_2.image(thumb) %>
+    <%= link_to image_tag(challenge.image_2.image(thumb)), new_challenge_response_path(challenge) %>
   </div>
 </div>
