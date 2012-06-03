@@ -1,9 +1,16 @@
 <div class="response-page">
 
-  <%= render :partial => "challenges/large_display", :locals => { :challenge => @challenge } %>
+  <%= render :partial => "challenges/larger_display", :locals => { :challenge => @challenge } %>
 
-  <%= form_tag challenge_responses_path(@challenge) do %>
-    <label for="answer">Your answer:</label>
-    <%= text_field_tag :answer %>
-  <% end  %>
+  <div class="clear">&nbsp;</div>
+
+  <div class="hint-string"><%= @challenge.hint_string %></div>
+
+  <div class="clear">&nbsp;</div>
+
+  <div style="text-align: center">
+    <%= form_tag challenge_responses_path(@challenge) do %>
+      <%= text_field_tag :answer, nil, :placeholder => "Guess the phrase!", :autocomplete => "off" %>
+    <% end  %>
+  </div>
 </div>

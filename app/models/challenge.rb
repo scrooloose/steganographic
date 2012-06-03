@@ -20,4 +20,8 @@ class Challenge < ActiveRecord::Base
   def correct_answer?(guess)
     guess == self.answer
   end
+
+  def hint_string
+    answer.gsub(/\s+/, '|').gsub(/\w/, '_')
+  end
 end

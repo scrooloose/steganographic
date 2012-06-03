@@ -111,6 +111,17 @@ h3 {
 
 /* END LAYOUT */
 
+.challenge-larger-display {
+  .image-one {
+    float: left;
+    margin-right: 20px;
+  }
+
+  .image-two {
+    float: left;
+  }
+}
+
 .challenge-large-display {
   .clue {
     clear: both;
@@ -179,3 +190,10 @@ h3 {
   }
 }
 
+.hint-string {
+  letter-spacing: 5px;
+  font-size: 28px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  text-align: center;
+}
