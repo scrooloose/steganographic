@@ -1,7 +1,5 @@
 <div class="challenge">
   <div class="image-one">
-    <% create_links.nil? && create_links = true %>
-
     <% if create_links %>
       <%= link_to image_tag(challenge.image_1.image(thumb)), new_challenge_response_path(challenge) %>
     <% else %>

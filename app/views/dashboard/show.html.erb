@@ -20,7 +20,7 @@
 
 <div class="teaser-challenges">
   <% Challenge.newly_added(3).each do |challenge| %>
-    <%= render :partial => "challenges/display", :locals => { :challenge => challenge, :thumb => :home_page } %>
+    <%= render :partial => "challenges/display", :locals => { :challenge => challenge, :thumb => :home_page, :create_links => true } %>
   <% end %>
 </div>
 
