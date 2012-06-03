@@ -2,7 +2,7 @@
 
   <div class="teaser-challenges">
     <% @teasers.each do |challenge| %>
-      <%= render :partial => "challenges/display", :locals => { :challenge => challenge, :thumb => :home_page } %>
+      <%= render :partial => "challenges/display", :locals => { :challenge => challenge, :thumb => :home_page, :create_links => user_signed_in? } %>
     <% end %>
   </div>
 

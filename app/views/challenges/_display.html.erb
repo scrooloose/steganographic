@@ -1,9 +1,19 @@
 <div class="challenge">
   <div class="image-one">
-    <%= link_to image_tag(challenge.image_1.image(thumb)), new_challenge_response_path(challenge) %>
+    <% create_links.nil? && create_links = true %>
+
+    <% if create_links %>
+      <%= link_to image_tag(challenge.image_1.image(thumb)), new_challenge_response_path(challenge) %>
+    <% else %>
+      <%= image_tag challenge.image_1.image(thumb) %>
+    <% end %>
   </div>
 
   <div class="image-two">
-    <%= link_to image_tag(challenge.image_2.image(thumb)), new_challenge_response_path(challenge) %>
+    <% if create_links %>
+      <%= link_to image_tag(challenge.image_2.image(thumb)), new_challenge_response_path(challenge) %>
+    <% else %>
+      <%= image_tag challenge.image_2.image(thumb) %>
+    <% end %>
   </div>
 </div>
