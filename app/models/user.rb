@@ -9,6 +9,7 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :remember_me
 
   has_many :challenges
+  has_many :responses
 
   def to_s
     "#{id} - #{email}"
