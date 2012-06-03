@@ -1,13 +1,15 @@
-<div style="font-size: 28px; font-weight: bold; height: 50px">LETS PLAY</div>
+<div style="text-align: center; margin-bottom: 30px">
+  <%= image_tag "lets_play.png" %>
+</div>
 
 <% if current_user.challenges.last %>
   <div style="border: 1px dotted #ddd; width: 425px; text-align: center; float: left">
     <%= render :partial => "challenges/large_display", :locals => { :challenge => current_user.challenges.last } %>
   </div>
 
-  <div style="padding-top: 60px; padding-left: 20px; float: left">
+  <div style="padding-left: 20px; float: left">
     <h3>&larr; YOUR LATEST CHALLENGE!</h3>
-    <%= link_to "SEND ANOTHER ONE RIGHT NOW BOY!", new_challenge_path %>
+    <%= link_to image_tag("buttons/btn_add.png"), new_challenge_path %>
   </div>
 
 <% else %>

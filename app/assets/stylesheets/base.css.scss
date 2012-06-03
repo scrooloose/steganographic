@@ -85,14 +85,15 @@ h3 {
 /* LAYOUT */
 
 .wrapper {
-  width: 1000px;
+  width: 1040px;
   margin: auto;
+  background: cyan;
+  padding: 20px;
+
 
 
   .header {
-    height: 100px;
-    background: #eee;
-    text-align: center;
+    height: 180px;
     margin-bottom: 20px;
 
     .title {
