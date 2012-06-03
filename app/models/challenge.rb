@@ -19,7 +19,7 @@ class Challenge < ActiveRecord::Base
   end
 
   def correct_answer?(guess)
-    guess == self.answer
+    guess.downcase == self.answer.downcase
   end
 
   def hint_string(show_vowels)
