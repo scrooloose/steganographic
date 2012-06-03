@@ -1,0 +1,15 @@
+<div class="challenge-large-display">
+  <div class="image-one">
+    <%= image_tag challenge.image_1.image(:default) %>
+  </div>
+
+  <div class="image-two">
+    <%= image_tag  challenge.image_2.image(:default) %>
+  </div>
+
+  <% unless challenge.clue.blank? %>
+    <div class="clue">
+      Clue: <%= challenge.clue %>
+    </div>
+  <% end %>
+</div>

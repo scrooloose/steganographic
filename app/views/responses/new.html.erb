@@ -1,19 +1,6 @@
 <div class="response-page">
-  <div class="image-one">
-    <div class="title">Image One</div>
-    <%= image_tag @challenge.image_1.image(:default) %>
-  </div>
 
-  <div class="image-two">
-    <div class="title">Image Two</div>
-    <%= image_tag  @challenge.image_2.image(:default) %>
-  </div>
-
-  <% unless @challenge.clue.blank? %>
-    <div class="clue">
-      Clue: <%= @challenge.clue %>
-    </div>
-  <% end %>
+  <%= render :partial => "challenges/large_display", :locals => { :challenge => @challenge } %>
 
   <%= form_tag challenge_responses_path(@challenge) do %>
     <label for="answer">Your answer:</label>

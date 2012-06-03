@@ -2,15 +2,7 @@
 
   <div class="teaser-challenges">
     <% @teasers.each do |challenge| %>
-      <div class="challenge">
-        <div class="image-one">
-          <%= image_tag challenge.image_1.image(:home_page) %>
-        </div>
-
-        <div class="image-two">
-          <%= image_tag challenge.image_2.image(:home_page) %>
-        </div>
-      </div>
+      <%= render :partial => "challenges/display", :locals => { :challenge => challenge, :thumb => :home_page } %>
     <% end %>
   </div>
 
