@@ -3,7 +3,7 @@ Website::Application.routes.draw do
 
   resource :dashboard, :controller => 'dashboard', :only => :show
 
-  resources :images
+  resources :images, :only => [:new, :create]
   resources :challenges, :only => [:new, :create] do
     resources :responses, :only => [:new, :create]
   end

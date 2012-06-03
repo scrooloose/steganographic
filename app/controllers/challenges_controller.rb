@@ -18,7 +18,7 @@ class ChallengesController < ApplicationController
     if @challenge.save
       flash[:notice] = "Successfully created challenge."
       @challenge.send_challenge_email
-      redirect_to root_url
+      redirect_to dashboard_path
     else
       render :action => 'new'
     end
