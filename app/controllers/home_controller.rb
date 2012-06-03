@@ -5,6 +5,9 @@ class HomeController < ApplicationController
     else
       @teasers = Challenge.last(3)
       @user = User.new
+      if params[:challenge_id]
+        session[:challenge_id] = params[:challenge_id]
+      end
     end
   end
 end

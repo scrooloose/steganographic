@@ -1,3 +1,3 @@
 You have a challenge from the IMPOSSIBLE MISSION FORCE!
 
-Go here to answer it! http://imf.playmob.com<%= new_challenge_response_path(@challenge) %>
+Go here to answer it! http://imf.playmob.com<%= root_path(:challenge_id => @challenge.id, :email => @challenge.email) %>

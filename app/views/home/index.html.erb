@@ -13,7 +13,7 @@
 
   <%= form_for(@user, :as => :user, :url => registration_path(@user)) do |f| %>
 
-    <div class="field"><%= f.email_field :email, :placeholder => "you@yours.com", :autocomplete => "off" %></div>
+    <div class="field"><%= f.email_field :email, :value => params[:email] || nil, :placeholder => "you@yours.com", :autocomplete => "off" %></div>
 
     <div class="field"><%= f.password_field :password, :placeholder => "password", :autocomplete => "off" %></div>
 

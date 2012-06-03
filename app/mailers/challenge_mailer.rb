@@ -1,3 +1,5 @@
+require 'cgi'
+
 class ChallengeMailer < ActionMailer::Base
   default :from => "martin.grenfell@gmail.com"
 
