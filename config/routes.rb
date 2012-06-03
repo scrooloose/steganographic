@@ -1,6 +1,8 @@
 Website::Application.routes.draw do
   devise_for :users
 
+  resource :dashboard, :controller => 'dashboard', :only => :show
+
   resources :images
   resources :challenges, :only => [:new, :create] do
     resources :responses, :only => [:new, :create]

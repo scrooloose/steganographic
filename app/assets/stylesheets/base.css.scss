@@ -72,6 +72,14 @@ div {
 
 .clear {
   clear: both;
+  height: 1px;
+}
+
+h1,
+h2,
+h3 {
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 /* LAYOUT */
@@ -85,6 +93,7 @@ div {
     height: 100px;
     background: #eee;
     text-align: center;
+    margin-bottom: 20px;
 
     .title {
       height: 80px;
