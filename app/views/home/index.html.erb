@@ -1,1 +1,31 @@
-This is the home page... pretty blank right now.
+<div class="home-page">
+
+  <div class="teaser-challenges">
+    <% @teasers.each do |challenge| %>
+      <div class="challenge">
+        <div class="image-one">
+          <%= image_tag challenge.image_1.image(:home_page) %>
+        </div>
+
+        <div class="image-two">
+          <%= image_tag challenge.image_2.image(:home_page) %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="clear">&nbsp;</div>
+
+  <div class="teaser-text">CAN YOU FIGURE IT OUT?</div>
+
+
+  <%= form_for(@user, :as => :user, :url => registration_path(@user)) do |f| %>
+
+    <div class="field"><%= f.email_field :email, :placeholder => "you@yours.com", :autocomplete => "off" %></div>
+
+    <div class="field"><%= f.password_field :password, :placeholder => "password", :autocomplete => "off" %></div>
+
+    <div><%= f.submit "Play" %></div>
+  <% end %>
+
+</div>

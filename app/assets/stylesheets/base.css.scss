@@ -70,6 +70,10 @@ div {
   }
 }
 
+.clear {
+  clear: both;
+}
+
 /* LAYOUT */
 
 .wrapper {
@@ -120,4 +124,55 @@ div {
   .image-two {
     float: left;
   }
+}
+
+.home-page {
+
+  .teaser-text {
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+    margin-top: 50px;
+    clear: both;
+  }
+
+  .teaser-challenges {
+    margin-top: 40px;
+
+    .challenge {
+      float: left;
+      border: 1px solid #ddd;
+      margin-right: 47px;
+    }
+
+    .challenge:last-child {
+      margin-right: 0;
+    }
+
+    .image-one {
+      float: left;
+    }
+
+    .image-two {
+      float: left;
+    }
+  }
+
+  form.user_new {
+    padding-top: 20px;
+    display: block;
+    width: 350px;
+    margin: auto;
+    text-align: center;
+
+    .field {
+      margin-top: 10px;
+    }
+
+    input {
+      text-align: center;
+    }
+  }
+
+
 }
