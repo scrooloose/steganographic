@@ -1,27 +1,13 @@
-<h1>Listing challenges</h1>
+<h2>Can you solve any of these suckas? HUH?!</h2>
 
-<table>
-  <tr>
-    <th>Image 1</th>
-    <th>Image 2</th>
-    <th>Clue</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
 
-<% @challenges.each do |challenge| %>
-  <tr>
-    <td><%= challenge.image_1_id %></td>
-    <td><%= challenge.image_2_id %></td>
-    <td><%= challenge.clue %></td>
-    <td><%= link_to 'Show', challenge %></td>
-    <td><%= link_to 'Edit', edit_challenge_path(challenge) %></td>
-    <td><%= link_to 'Destroy', challenge, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
-<% end %>
-</table>
+<div class="challenge-list">
 
-<br />
+  <% @challenges.each do |challenge| %>
+    <%= render :partial => 'challenges/display', :locals => { :create_links => true, :challenge => challenge, :thumb => :home_page } %>
+  <% end %>
 
-<%= link_to 'New Challenge', new_challenge_path %>
+
+  <div class="clear">&nbsp;</div>
+
+</div>

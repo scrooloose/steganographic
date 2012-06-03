@@ -1,8 +1,8 @@
 class ChallengesController < ApplicationController
-  before_filter :authenticate_user!
+  before_filter :authenticate_user!, :except => :index
 
   def index
-    @challenges = current_user.challenges
+    @challenges = Challenge.all
   end
 
   def new

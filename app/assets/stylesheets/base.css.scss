@@ -82,6 +82,7 @@ h3 {
   font-family: 'Press Start 2P', cursive;
   margin-top: 10px;
   margin-bottom: 10px;
+  line-height: 30px;
 }
 
 /* LAYOUT */
@@ -222,5 +223,23 @@ h3 {
     width: 150px;
     border: 2px dotted orange;
     margin-right: 20px;
+  }
+}
+
+.challenge-list {
+  padding-left: 340px;
+
+  .challenge {
+    clear: both;
+    padding-bottom: 30px;
+    float: left;
+
+    .image-one {
+      float: left;
+    }
+
+    .image-two {
+      float: left;
+    }
   }
 }
