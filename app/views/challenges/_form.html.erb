@@ -12,15 +12,25 @@
   <% end %>
 
 
-  <div class="field">
-    <%= f.label :image_1_id, "Image one" %><br />
-    <%= f.collection_select :image_1_id, Image.all, :id, :name %>
+  <h2>Choose two images from below!</h2>
+
+  <div class="chosen-images">
+    <div id="image-one" class="image-one">&nbsp;</div>
+    <div id="image-two" class="image-two">&nbsp;</div>
+    <div class="clear">&nbsp;</div>
   </div>
 
-  <div class="field">
-    <%= f.label :image_1_id, "Image two" %><br />
-    <%= f.collection_select :image_2_id, Image.all, :id, :name %>
+
+  <%= f.hidden_field :image_1_id %>
+  <%= f.hidden_field :image_2_id %>
+
+  <div class="image-selection-box">
+    <% Image.all.each do |image| %>
+      <%= link_to_function image_tag(image.image(:home_page)),
+                           "update_chosen_image(this)", :id => "image-#{image.id}" %>
+    <% end %>
   </div>
+
 
   <div style="margin: 20px 0">
     <%= link_to image_tag("buttons/btn_file.png"), new_image_path %>
