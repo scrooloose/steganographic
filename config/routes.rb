@@ -15,5 +15,7 @@ Website::Application.routes.draw do
   ActiveAdmin.routes(self)
   devise_for :admin_users, ActiveAdmin::Devise.config
 
+  match "home/signup" => "home#signup_login", :as => :signup_login, :via => :post
+
   root :to => "home#index"
 end
