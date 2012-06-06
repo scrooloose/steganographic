@@ -22,4 +22,10 @@ class User < ActiveRecord::Base
   def leaderboard_email
     email.sub(/@.*/, '@...')
   end
+
+  def challenges_to_try
+    #the first subquery detects challenges that havent been attempted
+    #the second detects challenges that have been detected but have not been completed
+    Challenge.where("(SELECT COUNT(*) FROM responses WHERE responses.challenge_id = challenges.id AND responses.user_id = ? ) = 0 OR (SELECT COUNT(*) FROM responses WHERE responses.challenge_id = challenges.id AND responses.user_id = ? AND correct IS NULL)", id, id)
+  end
 end

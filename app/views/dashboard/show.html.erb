@@ -21,7 +21,7 @@
 <div class="clear">&nbsp;</div>
 
 <div class="teaser-challenges">
-  <% Challenge.newly_added(3, current_user).each do |challenge| %>
+  <% current_user.challenges_to_try.order('created_at DESC').limit(3).each do |challenge| %>
     <%= render :partial => "challenges/display", :locals => { :challenge => challenge, :thumb => :home_page, :create_links => true } %>
   <% end %>
 </div>
