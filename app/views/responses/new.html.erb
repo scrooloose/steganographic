@@ -12,15 +12,16 @@
 
   <div class="clear">&nbsp;</div>
 
-  <div style="text-align: center">
-    <%= form_tag challenge_responses_path(@challenge) do %>
+  <%= form_tag challenge_responses_path(@challenge) do %>
+    <div class="answer-field">
       <%= text_field_tag :answer, nil, :placeholder => "Guess the phrase!", :autocomplete => "off" %>
-    <% end  %>
-  </div>
-
-  <% unless @resp.show_vowels? %>
-    <div style="text-align: center; margin-top: 20px">
-      <%= link_to image_tag("buttons/btn_stumped.png"), new_vowel_purchase_path(:resp_id => @resp.id)  %>
     </div>
-  <% end %>
+
+    <div class="buttons">
+      <%= image_submit_tag "buttons/btn_guess.png" %>
+      <% unless @resp.show_vowels? %>
+        <%= link_to image_tag("buttons/btn_stumped.png"), new_vowel_purchase_path(:resp_id => @resp.id)  %>
+      <% end %>
+    </div>
+  <% end  %>
 </div>
