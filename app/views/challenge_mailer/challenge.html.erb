@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+</head>
+
+<body>
+  <p>
+    You have received a challenge from <%= GlobalConfig[:base_url] %>.
+  </p>
+
+  <p>
+    Click here to answer it: <%= GlobalConfig[:base_url] %><%= root_path(:challenge_id => @challenge.id, :email => @email) %>
+  </p>
+
+
+  <table>
+    <tr>
+      <td><%= image_tag GlobalConfig[:base_url] + @challenge.image_1.image(:challenge_email) %></td>
+      <td><%= image_tag GlobalConfig[:base_url] + @challenge.image_2.image(:challenge_email) %></td>
+    </tr>
+
+    <tr>
+      <td colspan="2"><%= @challenge.hint_string %></td>
+    </tr>
+  </table>
+
+</body>
+</html>
