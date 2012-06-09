@@ -6,7 +6,7 @@ class HomeController < ApplicationController
       if params[:challenge_id]
         redirect_to new_challenge_response_path(params[:challenge_id])
       else
-        redirect_to dashboard_path
+        redirect_to_next_challenge :notice => "Hi there, can you solve this??!"
       end
     else
       @user = User.new :email => params[:email]
@@ -29,7 +29,7 @@ class HomeController < ApplicationController
     def login_existing_user
       if @user.valid_password?(params[:user][:password])
         sign_in(@user)
-        redirect_to dashboard_path, :notice => "Signed in successfully!"
+        redirect_to_next_challenge :notice => "Hi there, can you solve this??!"
       else
         flash.now[:notice] = "An account exists for this email, and has a different password."
         render "index"
@@ -40,7 +40,7 @@ class HomeController < ApplicationController
       @user = User.new(params[:user])
       if @user.save
         sign_in(@user)
-        redirect_to dashboard_path, :notice => "Signed up successfully!"
+        redirect_to_next_challenge  :notice => "Welcome! Try and solve this!"
       else
         flash.now[:notice] = "There was an error creating your account! #{@user.errors.full_messages.first} "
         render "index"

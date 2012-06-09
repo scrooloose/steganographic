@@ -23,6 +23,10 @@ class User < ActiveRecord::Base
     email.sub(/@.*/, '@...')
   end
 
+  def next_challenge
+    challenges_to_try.first
+  end
+
   def challenges_to_try
     #the first subquery detects challenges that havent been attempted
     #the second detects challenges that have been detected but have not been completed

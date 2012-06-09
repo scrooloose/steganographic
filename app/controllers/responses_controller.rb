@@ -15,13 +15,19 @@ class ResponsesController < ApplicationController
       @resp.correct = true
       current_user.points += @resp.points_for_this_attempt
       current_user.save!
-      redirect_to dashboard_path, :notice => "Good job! You truly PWN!"
+      redirect_to challenge_response_path(@challenge, @resp)
     else
       flash.now[:notice] = "Guess again!"
       render :new
     end
 
     @resp.save!
+  end
+
+  def show
+    unless @resp.correct?
+      redirect_to new_challenge_response_path(@challenge), :notice => "You haven't completed this yet..."
+    end
   end
 
   protected

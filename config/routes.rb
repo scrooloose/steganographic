@@ -7,7 +7,7 @@ Website::Application.routes.draw do
 
   resources :images, :only => [:new, :create]
   resources :challenges, :only => [:index, :new, :create] do
-    resources :responses, :only => [:new, :create]
+    resources :responses, :only => [:new, :create, :show]
   end
 
   resources :vowel_purchases, :only => [:new, :create]

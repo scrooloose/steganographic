@@ -1,13 +1,12 @@
 body {
   background-color: #fff;
   color: #333;
-  font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
+  font-family: 'Press Start 2P', cursive;
   line-height: 18px;
 }
 
 p, ol, ul, td {
-  font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px;
 }
@@ -16,6 +15,7 @@ pre {
   background-color: #eee;
   padding: 10px;
   font-size: 11px;
+  font-family: 'Press Start 2P', cursive;
 }
 
 a {
@@ -41,6 +41,7 @@ div {
   color: green;
   font-size: 16px;
   font-family: 'Press Start 2P', cursive;
+  text-align: center;
 }
 
 .field_with_errors {
@@ -260,4 +261,28 @@ input {
     margin-top: 20px
   }
 
+}
+
+.correct-response-page {
+  .answer {
+    font-size: 20px;
+    line-height: 26px
+  }
+
+  .challenge {
+    border: 2px solid orange;
+    width: 450px;
+    height: 200px;
+    float: left;
+  }
+
+  .next-challenge {
+    width: 400px;
+    height: 110px;
+
+    padding-left: 50px;
+    padding-top: 90px;
+    float: left;
+    font-size: 28px;
+  }
 }

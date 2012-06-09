@@ -1,0 +1,25 @@
+<div class="correct-response-page">
+  <h2>Good job! You truly PWN!</h2>
+
+  <div class="answer">
+    You have correctly answered: <br />
+    "<%= @challenge.answer %>"
+  </div>
+
+  <div style="padding: 40px 0">
+
+    <div class="challenge">
+      <%= render :partial => "challenges/large_display", :locals => { :challenge => @challenge } %>
+    </div>
+
+    <div class="next-challenge">
+      <%= link_to "Next challenge",  new_challenge_response_path(current_user.next_challenge) %> <br />
+    </div>
+
+    <div class="clear">&nbsp;</div>
+  </div>
+
+
+  <%= link_to "Add your own challenge!",  new_challenge_path %> <br />
+
+</div>
