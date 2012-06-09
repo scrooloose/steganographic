@@ -18,6 +18,7 @@ namespace :deploy do
 
   task :symlink_shared do
     run "ln -nfs #{shared_path}/config/database.yml #{release_path}/config/database.yml"
+    run "ln -nfs #{shared_path}/config/global_config.yml #{release_path}/config/global_config.yml"
   end
 
   desc "build missing paperclip styles"
