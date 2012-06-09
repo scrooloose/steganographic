@@ -1,0 +1,2 @@
+#for use in mailers and other objects that dont have access to request vars
+base_url: 'http://imf.localhost'
