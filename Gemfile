@@ -48,3 +48,7 @@ gem 'devise'
 gem 'capistrano'
 
 gem 'valid_email'
+
+group :development do
+  gem 'hirb'
+end
