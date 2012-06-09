@@ -11,7 +11,7 @@
   <div class="teaser-text">CAN YOU FIGURE IT OUT?</div>
 
 
-  <%= form_for @user, :url => signup_login_path do |f| %>
+  <%= form_for @user, :url => signup_login_path, :method => :post do |f| %>
     <div class="field"><%= f.email_field :email, :placeholder => "you@yours.com", :autocomplete => "off", :required => true %></div>
 
     <div class="field"><%= f.password_field :password, :placeholder => "password", :autocomplete => "off", :required => true %></div>
