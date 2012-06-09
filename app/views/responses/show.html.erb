@@ -8,14 +8,15 @@
 
   <div style="padding: 40px 0">
 
-    <div class="challenge">
-      <%= render :partial => "challenges/large_display", :locals => { :challenge => @challenge } %>
-    </div>
-
     <div class="next-challenge">
-      <%= link_to "Next challenge",  new_challenge_response_path(current_user.next_challenge) %> <br />
+      <%= link_to "Next challenge",  new_challenge_response_path(current_user.next_challenge) %> &rarr; <br />
       <%= link_to "Add your own challenge!",  new_challenge_path, :class => "add-your-own" %> <br />
     </div>
+
+    <div class="challenge">
+      <%= render :partial => "challenges/large_display", :locals => { :challenge => current_user.next_challenge } %>
+    </div>
+
 
     <div class="clear">&nbsp;</div>
   </div>

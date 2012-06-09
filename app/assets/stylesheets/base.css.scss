@@ -132,7 +132,7 @@ h3 {
   }
 
   .image-two {
-    float: left;
+    float: right;
   }
 }
 
@@ -149,7 +149,7 @@ h3 {
   }
 
   .image-two {
-    float: left;
+    float: right;
   }
 }
 
@@ -277,16 +277,15 @@ input {
   }
 
   .next-challenge {
-    width: 400px;
+    width: 460px;
     height: 110px;
 
-    padding-left: 50px;
     padding-top: 90px;
     float: left;
     font-size: 28px;
 
     .add-your-own {
-      padding-top: 40px;
+      margin-top: 40px;
       font-size: 10px;
     }
   }
