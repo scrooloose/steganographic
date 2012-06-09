@@ -14,12 +14,9 @@
 
     <div class="next-challenge">
       <%= link_to "Next challenge",  new_challenge_response_path(current_user.next_challenge) %> <br />
+      <%= link_to "Add your own challenge!",  new_challenge_path, :class => "add-your-own" %> <br />
     </div>
 
     <div class="clear">&nbsp;</div>
   </div>
-
-
-  <%= link_to "Add your own challenge!",  new_challenge_path %> <br />
-
 </div>
