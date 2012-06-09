@@ -7,6 +7,7 @@ class ChallengeMailer < ActionMailer::Base
     @challenge = challenge
     @email = email
     mail :to => email || challenge.email,
-         :from => challenge.user.email
+         :from => challenge.user.email,
+         :subject => "A Challenge from the Impossible Mission Force"
   end
 end
