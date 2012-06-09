@@ -8,6 +8,8 @@ Website::Application.routes.draw do
     resources :responses, :only => [:new, :create, :show]
   end
 
+  resources :challenge_emails, :only => [:create]
+
   resources :vowel_purchases, :only => [:new, :create]
 
   ActiveAdmin.routes(self)

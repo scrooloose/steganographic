@@ -289,4 +289,23 @@ input {
       font-size: 10px;
     }
   }
+
+  .send-to-friend-form {
+    display: none;
+    border: 2px dotted magenta;
+    clear: both;
+    margin-top: 20px;
+    padding: 10px;
+    width: 320px;
+    height: 110px;
+
+    input[type=email] {
+      width: 200px;
+    }
+
+    input {
+      float: left;
+    }
+  }
+
 }

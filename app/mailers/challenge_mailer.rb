@@ -3,9 +3,10 @@ require 'cgi'
 class ChallengeMailer < ActionMailer::Base
   default :from => "martin.grenfell@gmail.com"
 
-  def challenge(challenge)
+  def challenge(challenge, email=nil)
     @challenge = challenge
-    mail :to => challenge.email,
+    @email = email
+    mail :to => email || challenge.email,
          :from => challenge.user.email
   end
 end

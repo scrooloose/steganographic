@@ -6,7 +6,17 @@
     <p>"<%= @challenge.answer %>"</p>
 
     <p><strong><%= @resp.points_for_this_attempt %> points awarded</strong> for answering in <%= pluralize(@resp.attempts, "attempt") %>.</p>
+    <p>Send the challenge to a friend and <%= link_to_function "see if they pwn as hard as you!", "$('#send-to-friend-form').show()" %>
   </div>
+
+    <div class="send-to-friend-form" id="send-to-friend-form">
+      <p>Enter their email</p>
+      <%= form_tag challenge_emails_path, :method => :post do %>
+        <%= hidden_field_tag :challenge_id, @challenge.id %>
+        <%= email_field_tag :email, nil, :placeholder => "your@friend.com" %>
+        <%= image_submit_tag "buttons/btn_send.png" %>
+      <% end %>
+    </div>
 
   <div style="padding: 40px 0">
 
@@ -19,7 +29,7 @@
       <%= render :partial => "challenges/large_display", :locals => { :challenge => current_user.next_challenge } %>
     </div>
 
-
-    <div class="clear">&nbsp;</div>
   </div>
+
+  <div class="clear">&nbsp;</div>
 </div>
