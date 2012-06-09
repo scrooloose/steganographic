@@ -2,8 +2,10 @@
   <h2>Good job! You truly PWN!</h2>
 
   <div class="answer">
-    You have correctly answered: <br />
-    "<%= @challenge.answer %>"
+    <p>You have correctly answered:</p>
+    <p>"<%= @challenge.answer %>"</p>
+
+    <p><strong><%= @resp.points_for_this_attempt %> points awarded</strong> for answering in <%= pluralize(@resp.attempts, "attempt") %>.</p>
   </div>
 
   <div style="padding: 40px 0">
