@@ -8,11 +8,11 @@
 
 <body>
   <p>
-    You have received a challenge from <%= GlobalConfig[:base_url] %>.
+    You have received a challenge from <%= link_to GlobalConfig[:base_url], GlobalConfig[:base_url] %>.
   </p>
 
   <p>
-    Click here to answer it: <%= GlobalConfig[:base_url] %><%= root_path(:challenge_id => @challenge.id, :email => @email) %>
+    <%= link_to("Click here to answer it", GlobalConfig[:base_url] + root_path(:challenge_id => @challenge.id, :email => @email)) %>
   </p>
 
 
