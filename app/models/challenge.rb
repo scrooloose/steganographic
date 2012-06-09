@@ -28,7 +28,7 @@ class Challenge < ActiveRecord::Base
     guess.downcase == answer.downcase
   end
 
-  def hint_string(show_vowels)
+  def hint_string(show_vowels = false)
     rv = answer.gsub(/\s+/, '|')
 
     if show_vowels
