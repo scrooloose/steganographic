@@ -66,4 +66,9 @@ Website::Application.configure do
 
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = true
+
+  config.middleware.use ExceptionNotifier,
+    :email_prefix => "[IMF] ",
+    :sender_address => %{ "IMF" <martin.grenfell@gmail.com> },
+    :exception_recipients => %w{ martin.grenfell@gmail.com }
 end

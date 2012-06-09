@@ -47,6 +47,8 @@ gem 'devise'
 #deploy with Capistrano
 gem 'capistrano'
 
+gem 'exception_notification'
+
 gem 'valid_email'
 
 group :development do
