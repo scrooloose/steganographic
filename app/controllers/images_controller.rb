@@ -8,7 +8,7 @@ class ImagesController < InheritedResources::Base
   def create
     @image = Image.new(params[:image])
     if @image.save
-      redirect_to dashboard_path, :notice => "Successfully created image."
+      redirect_to new_challenge_path, :notice => "Successfully created image."
     else
       render :action => 'new'
     end

@@ -4,7 +4,7 @@ class ResponsesController < ApplicationController
 
   def new
     if @resp.correct
-      redirect_to dashboard_path, :notice => "Oy! You have already solved this one!"
+      redirect_to_next_challenge :notice => "Oy! You have already solved this one!"
     end
   end
 
