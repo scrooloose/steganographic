@@ -19,7 +19,13 @@ class Challenge < ActiveRecord::Base
   end
 
   def correct_answer?(guess)
-    guess.downcase == self.answer.downcase
+    guess = guess.gsub(/\s/, '')
+    guess = guess.gsub(/[^0-9a-zA-Z]/, '')
+
+    answer = self.answer.gsub(/\s/, '')
+    answer = answer.gsub(/[^0-9a-zA-Z]/, '')
+
+    guess.downcase == answer.downcase
   end
 
   def hint_string(show_vowels)

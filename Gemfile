@@ -52,3 +52,7 @@ gem 'valid_email'
 group :development do
   gem 'hirb'
 end
+
+group :development, :test do
+  gem 'factory_girl_rails'
+end
