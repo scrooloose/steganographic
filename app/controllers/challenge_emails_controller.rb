@@ -2,7 +2,7 @@ class ChallengeEmailsController < ApplicationController
   def create
     @email = params[:email] || (return render(:text => "email expected"))
     @challenge = Challenge.find(params[:challenge_id])
-    ChallengeMailer.challenge(@challenge, @email).deliver
+    ChallengeMailer.challenge(@challenge, @email, current_user.email).deliver
 
     redirect_to_response @challenge, :notice => "Your email has been sent!"
   end
