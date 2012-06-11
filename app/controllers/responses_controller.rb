@@ -9,6 +9,10 @@ class ResponsesController < ApplicationController
   end
 
   def create
+    if @resp.correct
+      return redirect_to_next_challenge(:notice => "Oy! You have already solved this one!")
+    end
+
     @resp.attempts += 1
 
     if @challenge.correct_answer?(params[:answer])
