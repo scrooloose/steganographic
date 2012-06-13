@@ -1,6 +1,7 @@
 require "net/https"
 require "uri"
 require 'json'
+require 'digest/sha1'
 
 class Response < ActiveRecord::Base
   belongs_to :user
@@ -12,7 +13,12 @@ class Response < ActiveRecord::Base
   after_initialize do |response|
     if response.new_record?
       response.attempts = 0
+      set_unlock_token
     end
+  end
+
+  def set_unlock_token
+    self.unlock_token = Digest::SHA1.hexdigest(Time.now.to_s)
   end
 
   def points_for_this_attempt

@@ -10,7 +10,7 @@ Website::Application.routes.draw do
 
   resources :challenge_emails, :only => [:create]
 
-  resources :vowel_purchases, :only => [:new, :create]
+  resources :vowel_purchases, :only => [:new]
 
   ActiveAdmin.routes(self)
   devise_for :admin_users, ActiveAdmin::Devise.config
