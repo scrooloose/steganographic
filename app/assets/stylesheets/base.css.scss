@@ -286,17 +286,20 @@ input {
     float: left;
   }
 
-  .next-challenge {
-    width: 460px;
+  .options {
+    width: 260px;
     height: 110px;
+    font-size: 40px;
 
-    padding-top: 90px;
+    img {
+      vertical-align: middle;
+    }
+
     float: left;
-    font-size: 28px;
+    padding-left: 140px;
 
     .add-your-own {
       margin-top: 40px;
-      font-size: 10px;
     }
   }
 

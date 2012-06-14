@@ -20,9 +20,9 @@
 
   <div style="padding: 40px 0">
 
-    <div class="next-challenge">
-      <%= link_to "Next challenge",  new_challenge_response_path(current_user.next_challenge) %> &rarr; <br />
-      <%= link_to "Add your own challenge!",  new_challenge_path, :class => "add-your-own" %> <br />
+    <div class="options">
+      <%= link_to image_tag("buttons/btn_next_puzzle.png", :width => 100), new_challenge_response_path(current_user.next_challenge) %> &rarr; <br />
+      <%= link_to image_tag("buttons/btn_create_puzzle.png", :width => 100), new_challenge_path, :class => "add-your-own" %> <br />
     </div>
 
     <div class="challenge">
