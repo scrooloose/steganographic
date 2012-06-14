@@ -7,6 +7,7 @@ class ChallengesController < ApplicationController
 
   def new
     @challenge = current_user.challenges.new
+    @image = Image.new
   end
 
   def create
@@ -16,6 +17,7 @@ class ChallengesController < ApplicationController
       @challenge.send_challenge_email
       redirect_to new_challenge_path
     else
+      @image = Image.new
       render :action => 'new'
     end
   end
