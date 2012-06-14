@@ -45,6 +45,10 @@
     <%= yield %>
 
   </div>
+  <div class="footer">
+    <%= mail_to "contact@impossiblemissionforce.co.uk", "contact us", :subject => "[IMF Contact email]", :encode => "javascript" %>
+  </div>
+
   <%= render :partial => "layouts/google_analytics" %>
 </body>
 </html>
