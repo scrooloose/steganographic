@@ -41,6 +41,7 @@ group :test do
   # Pretty printed test output
   gem 'turn', '0.8.2', :require => false
   gem 'shoulda'
+  gem 'shoulda-context'
 end
 
 gem 'devise'
