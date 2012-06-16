@@ -29,7 +29,7 @@ class Challenge < ActiveRecord::Base
   end
 
   def hint_string(show_vowels = false)
-    rv = answer.gsub(/\s+/, '|')
+    rv = answer.gsub(/\s+/, ' | ')
 
     if show_vowels
       rv.gsub!(/[bcdfghjklmnpqrstvwxyz_]/i, '_')
