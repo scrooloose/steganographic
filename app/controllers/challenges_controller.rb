@@ -5,10 +5,6 @@ class ChallengesController < ApplicationController
     @challenge = Challenge.find(params[:id])
   end
 
-  def index
-    @challenges = current_user.challenges_to_try
-  end
-
   def new
     @challenge = current_user.challenges.new
     @image = Image.new

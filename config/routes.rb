@@ -4,7 +4,7 @@ Website::Application.routes.draw do
   resource :leaderboard, :controller => 'leaderboard', :only => :show
 
   resources :images, :only => [:new, :create]
-  resources :challenges, :only => [:index, :new, :create, :show] do
+  resources :challenges, :only => [:new, :create, :show] do
     resources :responses, :only => [:new, :create, :show]
   end
 
