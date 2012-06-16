@@ -1,28 +1,53 @@
-<h2>Need a clue?!?!</h2>
+<div class="vowel-purchase-page">
+  <h2>Need a clue?!?!</h2>
 
-<h3>
-  Unlock all the 'AEIOU' and see if you can 'PWN' the challenge. 
-</h3>
+  <h3>
+  Ask your friends for help!
+  </h3>
 
-<h3>
-  And cos we're so fabulous, with each purchase we'll be donating $1.50 to UNICEF so they can feed a malnourished child much needed breakfast, lunch & dinner.
-</h3>
+  <p>
+    On twitter:
+    <a href="https://twitter.com/share" class="twitter-share-button" data-url="<%= challenge_url(@resp.challenge) %>" data-text="OMG, someone help me solve this puzzle on Steganographic!">Tweet</a>
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+  </p>
 
-<h3>
-  Want more info on the UNICEF survival packs? <%= link_to "click here!", "https://secure3.convio.net/uncfca/site/SPageServer?pagename=FAQS_EN&JServSessionIdr004=b8uqhwvur1.app339a" %>
-</h3>
+  <div style="margin: 20px 0">
+    Or plead for help on facebook!: <div class="fb-like" data-href="<%= challenge_url(@resp.challenge) %>" data-send="false" data-width="450" data-show-faces="true" data-layout="button_count"></div>
+  </div>
 
-<div class="google-checkout-wrapper">
-  <form action="https://checkout.google.com/api/checkout/v2/checkoutForm/Merchant/823148050943833" id="BB_BuyButtonForm" method="post" name="BB_BuyButtonForm" target="_top">
-    <input name="item_name_1" type="hidden" value="AEIOU Pack"/>
-    <input name="item_description_1" type="hidden" value="Unlock the AEIOU in your Stegano-graphic puzzle! 1.50 from this sale will go to UNICEF, helping them to feed a child for a day."/>
-    <input name="item_quantity_1" type="hidden" value="1"/>
-    <input name="item_price_1" type="hidden" value="2.99"/>
-    <input name="item_currency_1" type="hidden" value="GBP"/>
-    <input name="shopping-cart.items.item-1.digital-content.key" type="hidden" value="LYobVL3GCXDCQ8NIRefekrqWf/w2LZNuZfxh7pttCCg="/>
-    <input name="shopping-cart.items.item-1.digital-content.key.is-encrypted" type="hidden" value="true"/>
-    <input name="shopping-cart.items.item-1.digital-content.url" type="hidden" value="<%= new_vowel_purchase_url(:unlock_token => @resp.unlock_token, :resp_id => @resp.id) %>"/>
-    <input name="_charset_" type="hidden" value="utf-8"/>
-    <input alt="" src="https://checkout.google.com/buttons/buy.gif?merchant_id=823148050943833&amp;w=117&amp;h=48&amp;style=trans&amp;variant=text&amp;loc=en_US" type="image"/>
-  </form>
+  <h3>
+    Or unlock the vowels!
+  </h3>
+
+  <p>
+    Unlock all the 'AEIOU' and see if you can <i>PWN</i> the puzzle.
+  </p>
+
+  <p>
+    And cos we're so fabulous, with each purchase we'll be donating $1.50 to UNICEF so they can feed a malnourished child much needed breakfast, lunch & dinner.
+  </p>
+
+  <p>
+    Want more info on the UNICEF survival packs? <%= link_to "click here!", "https://secure3.convio.net/uncfca/site/SPageServer?pagename=FAQS_EN&JServSessionIdr004=b8uqhwvur1.app339a" %>
+  </p>
+
+  <div class="google-checkout-wrapper">
+    <form action="https://checkout.google.com/api/checkout/v2/checkoutForm/Merchant/823148050943833" id="BB_BuyButtonForm" method="post" name="BB_BuyButtonForm" target="_top">
+      <input name="item_name_1" type="hidden" value="AEIOU Pack"/>
+      <input name="item_description_1" type="hidden" value="Unlock the AEIOU in your Stegano-graphic puzzle! 1.50 from this sale will go to UNICEF, helping them to feed a child for a day."/>
+      <input name="item_quantity_1" type="hidden" value="1"/>
+      <input name="item_price_1" type="hidden" value="2.99"/>
+      <input name="item_currency_1" type="hidden" value="GBP"/>
+      <input name="shopping-cart.items.item-1.digital-content.key" type="hidden" value="LYobVL3GCXDCQ8NIRefekrqWf/w2LZNuZfxh7pttCCg="/>
+      <input name="shopping-cart.items.item-1.digital-content.key.is-encrypted" type="hidden" value="true"/>
+      <input name="shopping-cart.items.item-1.digital-content.url" type="hidden" value="<%= new_vowel_purchase_url(:unlock_token => @resp.unlock_token, :resp_id => @resp.id) %>"/>
+      <input name="_charset_" type="hidden" value="utf-8"/>
+      <input alt="" src="https://checkout.google.com/buttons/buy.gif?merchant_id=823148050943833&amp;w=117&amp;h=48&amp;style=trans&amp;variant=text&amp;loc=en_US" type="image"/>
+    </form>
+  </div>
+
+  <p>
+    <%= link_to "...back to the challenge", new_challenge_response_path(@resp.challenge) %>
+  </p>
+
 </div>
