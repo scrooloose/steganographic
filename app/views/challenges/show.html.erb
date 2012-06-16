@@ -5,8 +5,15 @@
     <%= link_to "log in", root_url(:challenge_id => @challenge.id) %> and answer it!
   </h3>
 
+  <div class="challenge-larger-display">
+    <div class="image-one">
+      <%= image_tag @challenge.image_1.image(:large) %>
+    </div>
 
-  <%= render :partial => "challenges/larger_display", :locals => { :challenge => @challenge } %>
+    <div class="image-two">
+      <%= image_tag @challenge.image_2.image(:large) %>
+    </div>
+  </div>
 
   <div class="clear">&nbsp;</div>
 

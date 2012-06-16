@@ -31,7 +31,15 @@
     </div>
 
     <div class="challenge">
-      <%= render :partial => "challenges/large_display", :locals => { :challenge => current_user.next_challenge } %>
+      <div class="challenge-large-display">
+        <div class="image-one">
+          <%= image_tag current_user.next_challenge.image_1.image(:default)  %>
+        </div>
+
+        <div class="image-two">
+          <%= image_tag current_user.next_challenge.image_2.image(:default) %>
+        </div>
+      </div>
     </div>
 
   </div>
