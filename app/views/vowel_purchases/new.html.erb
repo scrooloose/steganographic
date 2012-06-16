@@ -13,17 +13,16 @@
 </h3>
 
 <div class="google-checkout-wrapper">
-  <form action="https://checkout.google.com/api/checkout/v2/checkoutForm/Merchant/126794903651866" class="BB_BuyButtonForm" id="BB_BuyButtonForm" method="post" name="BB_BuyButtonForm" target="_top">
-      <input name="item_name_1" type="hidden" value="Vowels"/>
-      <input name="item_description_1" type="hidden" value="The vowels for puzzle x"/>
-      <input name="item_quantity_1" type="hidden" value="1"/>
-      <input name="item_price_1" type="hidden" value="0.01"/>
-      <input name="item_currency_1" type="hidden" value="GBP"/>
-      <input name="shopping-cart.items.item-1.digital-content.description" type="hidden" value="Click the link above to go back and attempt the challenge with the vowels filled in!"/>
-      <input name="shopping-cart.items.item-1.digital-content.key" type="hidden" value="NIPU3nLWVFUppDSjGY1SgxQTAzKl7nBkdRCRZQ0TFpQ="/>
-      <input name="shopping-cart.items.item-1.digital-content.key.is-encrypted" type="hidden" value="true"/>
-      <input name="shopping-cart.items.item-1.digital-content.url" type="hidden" value="<%= new_vowel_purchase_url(:unlock_token => @resp.unlock_token, :resp_id => @resp.id) %>"/>
-      <input name="_charset_" type="hidden" value="utf-8"/>
-      <input alt="" src="https://checkout.google.com/buttons/buy.gif?merchant_id=126794903651866&amp;w=117&amp;h=48&amp;style=white&amp;variant=text&amp;loc=en_US" type="image"/>
+  <form action="https://checkout.google.com/api/checkout/v2/checkoutForm/Merchant/823148050943833" id="BB_BuyButtonForm" method="post" name="BB_BuyButtonForm" target="_top">
+    <input name="item_name_1" type="hidden" value="AEIOU Pack"/>
+    <input name="item_description_1" type="hidden" value="Unlocked the AEIOU in Stegano-graphic puzzle, brought to you by Impossible Mission Force. 1.50 from this sale will go to UNICEF, helping them to feed a child for a day."/>
+    <input name="item_quantity_1" type="hidden" value="1"/>
+    <input name="item_price_1" type="hidden" value="2.99"/>
+    <input name="item_currency_1" type="hidden" value="GBP"/>
+    <input name="shopping-cart.items.item-1.digital-content.key" type="hidden" value="LYobVL3GCXDCQ8NIRefekrqWf/w2LZNuZfxh7pttCCg="/>
+    <input name="shopping-cart.items.item-1.digital-content.key.is-encrypted" type="hidden" value="true"/>
+    <input name="shopping-cart.items.item-1.digital-content.url" type="hidden" value="<%= new_vowel_purchase_url(:unlock_token => @resp.unlock_token, :resp_id => @resp.id) %>"/>
+    <input name="_charset_" type="hidden" value="utf-8"/>
+    <input alt="" src="https://checkout.google.com/buttons/buy.gif?merchant_id=823148050943833&amp;w=117&amp;h=48&amp;style=trans&amp;variant=text&amp;loc=en_US" type="image"/>
   </form>
 </div>
