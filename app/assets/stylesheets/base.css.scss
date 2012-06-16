@@ -96,7 +96,7 @@ h3 {
 
   .header {
     height: 180px;
-    margin-bottom: 50px;
+    margin-bottom: 10px;
     background: cyan;
 
     .logo {
@@ -271,6 +271,12 @@ input {
   .buttons {
     text-align: center;
     margin-top: 20px
+  }
+
+  .challenge-banner {
+    text-align: center;
+    margin-bottom: 40px;
+    padding-bottom: 10px;
   }
 
 }
