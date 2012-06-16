@@ -14,4 +14,10 @@ class ApplicationController < ActionController::Base
     resp = Response.find_by_user_id_and_challenge_id(current_user.id, challenge.id) || raise("No response found")
     redirect_to challenge_response_path(challenge, resp), args
   end
+
+  def login_required
+    unless current_user
+      redirect_to root_url, :notice => "You gotta log in first"
+    end
+  end
 end

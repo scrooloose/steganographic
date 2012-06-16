@@ -1,4 +1,5 @@
 class ResponsesController < ApplicationController
+  before_filter :login_required
   before_filter :load_challenge
   before_filter :load_response
 

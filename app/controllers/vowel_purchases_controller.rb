@@ -1,4 +1,6 @@
 class VowelPurchasesController < ApplicationController
+  before_filter :login_required
+
   def new
     #a hack to detect if the google checkout form has redirected back to us
     if params[:unlock_token]

@@ -1,4 +1,6 @@
 class ChallengeEmailsController < ApplicationController
+  before_filter :login_required
+
   def create
     @email = params[:email] || (return render(:text => "email expected"))
     @challenge = Challenge.find(params[:challenge_id])

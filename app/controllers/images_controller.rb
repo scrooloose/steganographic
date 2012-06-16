@@ -1,5 +1,5 @@
 class ImagesController < InheritedResources::Base
-  before_filter :authenticate_user!
+  before_filter :login_required
 
   def new
     @image = Image.new
