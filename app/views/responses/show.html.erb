@@ -30,16 +30,9 @@
       <%= link_to image_tag("buttons/btn_create_puzzle.png"), new_challenge_path, :class => "add-your-own" %> <br />
     </div>
 
-    <div class="challenge">
-      <div class="challenge-large-display">
-        <div class="image-one">
-          <%= image_tag current_user.next_challenge.image_1.image(:default)  %>
-        </div>
-
-        <div class="image-two">
-          <%= image_tag current_user.next_challenge.image_2.image(:default) %>
-        </div>
-      </div>
+    <div class="challenge-display">
+      <%= image_tag current_user.next_challenge.image_1.image(:default)  %>
+      <%= image_tag current_user.next_challenge.image_2.image(:default) %>
     </div>
 
   </div>
