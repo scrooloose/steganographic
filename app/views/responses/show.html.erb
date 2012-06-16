@@ -21,7 +21,12 @@
   <div style="padding: 40px 0">
 
     <div class="options">
-      <%= link_to image_tag("buttons/btn_next_puzzle.png"), new_challenge_response_path(current_user.next_challenge) %> &rarr; <br />
+      <% if current_user.next_challenge %>
+        <%= link_to image_tag("buttons/btn_next_puzzle.png"), new_challenge_response_path(current_user.next_challenge) %> <span style="font-size: 40px">&rarr; <br />
+      <% else %>
+        <p>You've  pwned all the challenges! Try creating one of your own!</p>
+      <% end %>
+
       <%= link_to image_tag("buttons/btn_create_puzzle.png"), new_challenge_path, :class => "add-your-own" %> <br />
     </div>
 

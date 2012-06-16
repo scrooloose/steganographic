@@ -2,7 +2,12 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
 
   def redirect_to_next_challenge(args = {})
-    redirect_to new_challenge_response_path(current_user.next_challenge), args
+    next_challenge = current_user.next_challenge
+    if next_challenge
+      redirect_to new_challenge_response_path(next_challenge), args
+    else
+      redirect_to new_challenge_path, :notice => "You have completed all the puzzles! Try creating one!"
+    end
   end
 
   def redirect_to_response(challenge, args = {})
