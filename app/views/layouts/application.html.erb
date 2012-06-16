@@ -13,34 +13,47 @@
   <div class="wrapper">
 
     <div class="header">
-      <div class="title">
+
+      <div class="logo">
         <%= link_to image_tag("logo.png"), root_url %>
       </div>
+
+      <div class="by">
+        presented <br />
+        by the ...
+      </div>
+
+      <div class="imf">
+        IMPOSSIBLE MISSION <br />
+        FORCE
+      </div>
+
       <div class="nav">
         <% if user_signed_in? %>
           <%= link_to image_tag("buttons/btn_logout.png"), destroy_user_session_path, :method => :delete %>
         <% end %>
         <%= link_to image_tag("buttons/btn_scoreboard.png"), leaderboard_path %>
+
+        <% if user_signed_in? %>
+
+          <div class="points-counter">
+            Points: <%= current_user.points %>
+          </div>
+        <% end %>
       </div>
 
-      <div class="clear">&nbsp;</div>
-
-      <% if user_signed_in? %>
-
-        <div class="points-counter">
-          Points: <%= current_user.points %>
-        </div>
-      <% end %>
 
       <div class="clear">&nbsp;</div>
     </div>
 
-    <% if flash[:notice] %>
-      <div class="flash"><%= flash[:notice] %></div>
-    <% end %>
+    <div class="content-wrapper">
+      <% if flash[:notice] %>
+        <div class="flash"><%= flash[:notice] %></div>
+      <% end %>
 
 
-    <%= yield %>
+      <%= yield %>
+    </div>
 
   </div>
   <div class="footer">

@@ -92,34 +92,51 @@ h3 {
 .wrapper {
   width: 1040px;
   margin: auto;
-  background: cyan;
-  padding: 20px;
-
-
+  background-color: #00eeee;
 
   .header {
     height: 180px;
     margin-bottom: 50px;
+    background: cyan;
 
-    .title {
-      height: 80px;
-      line-height: 80px;
-      font-size: 30px;
-      font-weight: bold;
+    .logo {
+      vertical-align: middle;
+      float: left;
+    }
+
+    .by {
+      float: left;
+      font-size: 8px;
+      line-height: 10px;
+      padding: 60px 40px 0 40px;
+    }
+
+    .imf {
+      float: left;
+      font-size: 20px;
+      padding-top: 65px;
+      line-height: 25px;
+      font-style: italic;
+      text-align: center;
     }
 
     .nav {
       float: right;
       margin-right: 40px;
+      padding-top: 80px;
+
+      .points-counter {
+        text-align: right;
+        font-size: 16px;
+        padding-top: 10px;
+      }
     }
+
   }
 
-  .points-counter {
-    text-align: right;
-    padding-top: 20px;
-    padding-right: 40px;
-    font-size: 16px;
-    font-family: 'Press Start 2P', cursive;
+
+  .content-wrapper {
+    padding: 20px;
   }
 }
 
