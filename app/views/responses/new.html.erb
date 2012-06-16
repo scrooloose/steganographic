@@ -4,16 +4,13 @@
     <%= image_tag "your_challenge.png" %>
   </div>
 
-  <div class="challenge-display">
+  <div class="challenge-display clearfix">
     <%= image_tag @challenge.image_1.image(:large) %>
     <%= image_tag @challenge.image_2.image(:large) %>
   </div>
 
-  <div class="clear">&nbsp;</div>
 
   <div class="hint-string"><%= @challenge.hint_string(@resp.show_vowels) %></div>
-
-  <div class="clear">&nbsp;</div>
 
   <%= form_tag challenge_responses_path(@challenge) do %>
     <div class="answer-field">

@@ -13,10 +13,9 @@
 
     <p class="instructions">Choose 2 images from the bank below, add the answer these images represent, then send it on to a friend to pwn</p>
 
-    <div class="chosen-images">
+    <div class="chosen-images clearfix">
       <div id="image-one" class="image-one">&nbsp;</div>
       <div id="image-two" class="image-two">&nbsp;</div>
-      <div class="clear">&nbsp;</div>
     </div>
 
 
@@ -26,10 +25,7 @@
           <%= link_to_function image_tag(image.image(:new_challenge_form)), "update_chosen_image(this)", :id => "image-#{image.id}" %>
         </div>
       <% end %>
-      <div class="clear">&nbsp;</div>
     </div>
-
-    <div class="clear">&nbsp;</div>
 
     <hr />
 

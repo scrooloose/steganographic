@@ -5,17 +5,11 @@
     <%= link_to "log in", root_url(:challenge_id => @challenge.id) %> and answer it!
   </h3>
 
-  <div class="challenge-display">
-    <div class="image-one">
-      <%= image_tag @challenge.image_1.image(:large) %>
-    </div>
-
-    <div class="image-two">
-      <%= image_tag @challenge.image_2.image(:large) %>
-    </div>
+  <div class="challenge-display clearfix">
+    <%= image_tag @challenge.image_1.image(:large) %>
+    <%= image_tag @challenge.image_2.image(:large) %>
   </div>
 
-  <div class="clear">&nbsp;</div>
 
   <div class="hint-string"><%= @challenge.hint_string %></div>
 
