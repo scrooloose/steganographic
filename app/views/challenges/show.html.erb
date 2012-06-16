@@ -1,20 +1,15 @@
-<p id="notice"><%= notice %></p>
+<div class="challenge-teaser-page">
 
-<p>
-  <b>Image 1:</b>
-  <%= @challenge.image_1_id %>
-</p>
-
-<p>
-  <b>Image 2:</b>
-  <%= @challenge.image_2_id %>
-</p>
-
-<p>
-  <b>Clue:</b>
-  <%= @challenge.clue %>
-</p>
+  <h3>
+    Can you figure out the phrase below?? <br />
+    <%= link_to "log in", root_url(:challenge_id => @challenge.id) %> and answer it!
+  </h3>
 
 
-<%= link_to 'Edit', edit_challenge_path(@challenge) %> |
-<%= link_to 'Back', challenges_path %>
+  <%= render :partial => "challenges/larger_display", :locals => { :challenge => @challenge } %>
+
+  <div class="clear">&nbsp;</div>
+
+  <div class="hint-string"><%= @challenge.hint_string %></div>
+
+</div>

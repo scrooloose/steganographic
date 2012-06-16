@@ -1,5 +1,9 @@
 class ChallengesController < ApplicationController
-  before_filter :authenticate_user!, :except => :index
+  before_filter :authenticate_user!, :except => :show
+
+  def show
+    @challenge = Challenge.find(params[:id])
+  end
 
   def index
     @challenges = current_user.challenges_to_try
