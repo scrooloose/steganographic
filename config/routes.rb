@@ -1,4 +1,6 @@
 Website::Application.routes.draw do
+  devise_for :users
+
   resource :leaderboard, :controller => 'leaderboard', :only => :show
 
   resources :images, :only => [:new, :create]
