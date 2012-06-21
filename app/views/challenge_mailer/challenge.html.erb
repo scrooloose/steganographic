@@ -8,15 +8,15 @@
 
 <body>
   <h1>
-    You have received a challenge from <%= link_to "Steganographic!", GlobalConfig[:base_url] %>
+    WELCOME to the <%= link_to "Impossible Mission Force", GlobalConfig[:base_url] %>
   </h1>
 
   <h2>
-    Can you guess the phrase below for these two images?
+    Your challenge, should you choose to accept it, is to uncover the Steganographic below. Your friend believes you have what it takes to solve it...
   </h2>
 
   <h3>
-    If so, <%= link_to("click here to answer it!", GlobalConfig[:base_url] + root_path(:challenge_id => @challenge.id, :email => @email)) %>
+    We'll be waiting for your answer... <%= link_to("ACT NOW", GlobalConfig[:base_url] + root_path(:challenge_id => @challenge.id, :email => @email)) %>
   </h3>
 
 
