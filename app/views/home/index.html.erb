@@ -1,12 +1,20 @@
 <div class="home-page">
 
   <div class="teaser-challenges">
-    <% @teasers.each do |challenge| %>
       <div class="challenge">
-        <%= image_tag challenge.image_1.image(:home_page) %>
-        <%= image_tag challenge.image_2.image(:home_page) %>
+        <%= image_tag "teasers/1.png" %>
+        sitting on the fence
       </div>
-    <% end %>
+
+      <div class="challenge">
+        <%= image_tag "teasers/2.png" %>
+        w__ d__ t__ c______ c____ t__ r___ ?
+      </div>
+
+      <div class="challenge">
+        <%= image_tag "teasers/3.png" %>
+        ____ __ _____
+      </div>
   </div>
 
   <div class="teaser-text">CAN YOU FIGURE IT OUT?</div>

@@ -1,6 +1,4 @@
 class HomeController < ApplicationController
-  before_filter :load_teasers
-
   def index
     if user_signed_in?
       if params[:challenge_id]
@@ -56,9 +54,5 @@ class HomeController < ApplicationController
       else
         redirect_to_next_challenge  :notice => "Welcome! Try and solve this!"
       end
-    end
-
-    def load_teasers
-      @teasers = Challenge.last(3)
     end
 end
