@@ -20,9 +20,11 @@
 
   <div class="clearfix" style="padding: 40px 0">
 
+    <% next_challenge = current_user.next_challenge  %>
+
     <div class="options">
       <% if current_user.next_challenge %>
-        <%= link_to image_tag("buttons/btn_next_puzzle.png"), new_challenge_response_path(current_user.next_challenge) %> <span style="font-size: 40px">&rarr; <br />
+        <%= link_to image_tag("buttons/btn_next_puzzle.png"), new_challenge_response_path(next_challenge) %> <span style="font-size: 40px">&rarr; <br />
       <% else %>
         <p>You've  pwned all the challenges! Try creating one of your own!</p>
       <% end %>
@@ -31,8 +33,8 @@
     </div>
 
     <div class="challenge-display">
-      <%= image_tag current_user.next_challenge.image_1.image(:default)  %>
-      <%= image_tag current_user.next_challenge.image_2.image(:default) %>
+      <%= image_tag next_challenge.image_1.image(:default)  %>
+      <%= image_tag next_challenge.image_2.image(:default) %>
     </div>
 
   </div>
