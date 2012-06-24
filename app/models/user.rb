@@ -24,7 +24,7 @@ class User < ActiveRecord::Base
   end
 
   def next_challenge
-    challenges_to_try.first
+    challenges_to_try.order('RAND()').first
   end
 
   def challenges_to_try
