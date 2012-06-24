@@ -7,6 +7,10 @@ class ResponsesController < ApplicationController
     if @resp.correct
       redirect_to challenge_response_path(@challenge, @resp), :notice => "You have already solved this one!"
     end
+
+    if current_user == @challenge.user
+      redirect_to_next_challenge(:notice => "You can't solve your own puzzles!")
+    end
   end
 
   def create
