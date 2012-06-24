@@ -30,6 +30,9 @@ class User < ActiveRecord::Base
   def challenges_to_try
     #the first subquery detects challenges that havent been attempted
     #the second detects challenges that have been detected but have not been completed
-    Challenge.where("(SELECT COUNT(*) FROM responses WHERE responses.challenge_id = challenges.id AND challenges.user_id != :c_uid AND responses.user_id = :c_uid ) = 0 OR (SELECT COUNT(*) FROM responses WHERE responses.challenge_id = challenges.id AND responses.user_id = :c_uid AND challenges.user_id != :c_uid AND correct IS NULL)", :c_uid => id)
+    Challenge.where(
+      "challenges.user_id != :c_uid " +
+      "AND (SELECT COUNT(*) FROM responses WHERE responses.challenge_id = challenges.id AND responses.user_id = :c_uid ) = 0 " +
+      "OR (SELECT COUNT(*) FROM responses WHERE responses.challenge_id = challenges.id AND responses.user_id = :c_uid AND correct IS NULL)", :c_uid => id)
   end
 end
