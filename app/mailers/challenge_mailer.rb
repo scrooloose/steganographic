@@ -1,7 +1,7 @@
 require 'cgi'
 
 class ChallengeMailer < ActionMailer::Base
-  default :from => "martin.grenfell@gmail.com"
+  default :from => "noreply@impossiblemissionforce.co.uk"
 
   def challenge(challenge, email=nil, from_email=nil)
     @challenge = challenge
