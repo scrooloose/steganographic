@@ -1,4 +1,7 @@
 class Challenge < ActiveRecord::Base
+  scope :for_beginners, where(:for_beginners => true)
+  scope :not_for_beginners, where('for_beginners = ? OR for_beginners IS NULL', false)
+
   belongs_to :user
   belongs_to :image_1, :class_name => "Image"
   belongs_to :image_2, :class_name => "Image"

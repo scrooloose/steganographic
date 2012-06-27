@@ -27,7 +27,22 @@ class User < ActiveRecord::Base
     challenges_to_try.order('RAND()').first
   end
 
+  def incomplete_beginner_challenges
+    Challenge.for_beginners.where(
+      "challenges.user_id != :user_id " +
+      "AND (NOT EXISTS (SELECT * FROM responses,users where responses.challenge_id = challenges.id AND responses.user_id = users.id AND user_id = :user_id) " +
+      "OR EXISTS (SELECT * FROM responses,users where responses.challenge_id = challenges.id AND responses.user_id = users.id AND user_id = :user_id AND (responses.correct IS NULL OR responses.correct = :false)))",
+      :user_id => id, :false => false)
+  end
+
+  def completed_all_beginner_challenges?
+    incomplete_beginner_challenges.empty?
+  end
+
   def challenges_to_try
+    beginner_challenges = incomplete_beginner_challenges
+    return beginner_challenges if beginner_challenges.any?
+
     #the first subquery detects challenges that havent been attempted
     #the second detects challenges that have been detected but have not been completed
     Challenge.where(
