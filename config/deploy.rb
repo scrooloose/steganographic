@@ -1,5 +1,5 @@
 set :application, "imf"
-set :repository,  "git://github.com/scrooloose/imf.git"
+set :repository,  "git://github.com/scrooloose/steganographic.git"
 set :scm, :git
 set :user, 'deploy'
 set :use_sudo, false
